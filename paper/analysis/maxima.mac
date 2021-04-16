@@ -1,0 +1,19 @@
+/* SLAM this pulse model */
+
+/* The score function S(x,mu,d) is the same, but now depends on mu1, mu2, and mu3 */
+
+x*k/m/(m+k)*['diff(m, delta), 'diff(m, mu1), 'diff(m, mu2), 'diff(m, mu3)] + not_depending_on_x;
+
+/* variance-covariance matrix is now 4x4 */
+{(m*(m+k)/k)*(k/m/(m+k))^2}*{transpose(['diff(m, delta), 'diff(m, mu1), 'diff(m, mu2), 'diff(m, mu3)]).['diff(m, delta), 'diff(m, mu1), 'diff(m, mu2), 'diff(m, mu3)]};
+
+/* below we define this relation as a function, so we can input differentformulae for the mean m(mu1, mu2, mu3, delta) */
+
+meanDerivative(m) := [diff(m, delta), diff(m, mu1), diff(m, mu2), diff(m, mu3)];
+
+f(m) :=k/((m+k)*m)*transpose(meanDerivative(m)).meanDerivative(m);
+
+/* the Fisher information matrix for the RT-conversion SLAM/TUC/TLS f(labelled, unlabelled)*/
+
+I_slam: f(mu2 + mu3*(1 - exp(-delta*t))) + f(mu1 + mu3*exp(-delta*t));
+

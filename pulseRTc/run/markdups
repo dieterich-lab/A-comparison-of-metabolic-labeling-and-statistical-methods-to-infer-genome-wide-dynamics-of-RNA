@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Usage: 
+#       markdups SAMPLELIST
+
+# cannot pipe samtools sort to MarkDuplicates as it uses multiple pass...
+PICARD=/biosw/picard-tools/2.5.0/picard.jar
+RMDUPS=true
+
+DIRLOC=/prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping
+OUTPUT=${DIRLOC}
+SCRATCH=/scratch/eboileau
+files=($DIRLOC/*)
+
+while IFS=" " read -r sample name
+ do
+   FILEN=$(printf '%s\n' "${files[@]}" | grep $sample | grep -v ".bai")
+   NAME="${OUTPUT}/${sample}${name}.sortdedup"
+   echo "Processing ${FILEN}..."
+   java -jar ${PICARD} MarkDuplicates \
+        I=${FILEN} \
+	O="${NAME}.bam" \
+	M="${NAME}.info" \
+	REMOVE_DUPLICATES=${RMDUPS} \
+	TMP_DIR=${SCRATCH}
+   echo "Indexing..."
+   samtools index "${NAME}.bam"
+   echo "Done!"
+ done < "$1"
+

@@ -1,0 +1,5 @@
+.:
+GRCh38_85_plus_Spikes_Isabel_flat.gff   tls-0h-1h-2h-4h-8h.counts.tsv          
+GRCh38_85_plus_Spikes_Isabel_flat.gtf   tls-0h-1h-2h-4h-8h.counts.tsv.summary          
+slam-0h-1h-2h-4h-8h.counts.tsv          tuc-0h-1h-2h-4h-8h.counts.tsv 
+slam-0h-1h-2h-4h-8h.counts.tsv.summary  tuc-0h-1h-2h-4h-8h.counts.tsv.summary

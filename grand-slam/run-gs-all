@@ -1,0 +1,88 @@
+#!/bin/bash
+#
+#SBATCH -J "grand-slam"
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 1
+#SBATCH --mem=20G
+
+# modules loaded in ~/.bashrc
+
+NOW=$(date --utc +%y%m%d.%H%M%SZ)
+
+NUMCPUS=12
+SBATCHOPTS="--mem=80G --ntasks 1 --cpus-per-task=$NUMCPUS --mail-user boileau@uni-heidelberg.de --mail-type FAIL,TIME_LIMIT"
+
+GEDI=/home/eboileau/install/GRAND-SLAM_2.0.5f/gedi
+GSOPTS="-D -strandness Antisense -overlap Unique -trim5p 5 -trim3p 5 -full" 
+# 06.08.2020 ignore -no4sUpattern, file names now include pattern, use -full w/o -sparse" 
+
+TIMEPTS=all
+
+# SLAM
+DIRLOC=/ComparisonOfMetabolicLabeling/grand-slam/slam
+cd $DIRLOC
+PREFIX="${DIRLOC}/${TIMEPTS}/${TIMEPTS}"
+READS="${DIRLOC}/${TIMEPTS}.bamlist"
+LOG="${DIRLOC}/${TIMEPTS}/${TIMEPTS}.${NOW}.log"
+JOBNAME="gs-sl-${TIMEPTS}"
+cat > ${JOBNAME} << EOF
+#!/bin/bash
+#SBATCH -J "${JOBNAME}"
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c ${NUMCPUS}
+#SBATCH --mem=80G
+#SBATCH --mail-user=boileau@uni-heidelberg.de 
+#SBATCH --mail-type=FAIL,TIME_LIMIT
+#SBATCH --output=$LOG
+
+$GEDI -e Slam -genomic GRCh38_85_wspikes $GSOPTS -nthreads $NUMCPUS -prefix $PREFIX -reads $READS 
+EOF
+sbatch ${JOBNAME}
+
+# TUC
+DIRLOC=/ComparisonOfMetabolicLabeling/grand-slam/tuc
+cd $DIRLOC
+PREFIX="${DIRLOC}/${TIMEPTS}/${TIMEPTS}"
+READS="${DIRLOC}/${TIMEPTS}.bamlist"
+LOG="${DIRLOC}/${TIMEPTS}/${TIMEPTS}.${NOW}.log"
+JOBNAME="gs-tuc-${TIMEPTS}"
+cat > ${JOBNAME} << EOF
+#!/bin/bash
+#SBATCH -J "${JOBNAME}"
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c ${NUMCPUS}
+#SBATCH --mem=80G
+#SBATCH --mail-user=boileau@uni-heidelberg.de 
+#SBATCH --mail-type=FAIL,TIME_LIMIT
+#SBATCH --output=$LOG
+
+$GEDI -e Slam -genomic GRCh38_85_wspikes $GSOPTS -nthreads $NUMCPUS -prefix $PREFIX -reads $READS 
+EOF
+sbatch ${JOBNAME}
+
+# TLS
+DIRLOC=/ComparisonOfMetabolicLabeling/grand-slam/tls
+cd $DIRLOC
+PREFIX="${DIRLOC}/${TIMEPTS}/${TIMEPTS}"
+READS="${DIRLOC}/${TIMEPTS}.bamlist"
+LOG="${DIRLOC}/${TIMEPTS}/${TIMEPTS}.${NOW}.log"
+JOBNAME="gs-tls-${TIMEPTS}"
+cat > ${JOBNAME} << EOF
+#!/bin/bash
+#SBATCH -J "${JOBNAME}"
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c ${NUMCPUS}
+#SBATCH --mem=80G
+#SBATCH --mail-user=boileau@uni-heidelberg.de 
+#SBATCH --mail-type=FAIL,TIME_LIMIT
+#SBATCH --output=$LOG
+
+$GEDI -e Slam -genomic GRCh38_85_wspikes $GSOPTS -nthreads $NUMCPUS -prefix $PREFIX -reads $READS 
+EOF
+sbatch ${JOBNAME}
+
+

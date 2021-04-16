@@ -1,0 +1,7 @@
+# Pin versions of following dependencies:
+setuptools>=38.3.0
+numpy>=1.16,<1.17
+pandas==0.24.0
+joblib==0.13.2
+pysam==0.15.2 # with Samtools-1.7
+pyyaml==5.1

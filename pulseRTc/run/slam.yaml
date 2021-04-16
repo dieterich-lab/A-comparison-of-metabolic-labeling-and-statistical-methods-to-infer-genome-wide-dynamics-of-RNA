@@ -1,0 +1,24 @@
+# configuration file for SLAM data
+
+# BAM files
+samples:
+ 107307A_SLAM_0h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107307A_SLAM_0h.sortdedup.bam
+ 107309A_SLAM_1h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107309A_SLAM_1h.sortdedup.bam
+ 107311A_SLAM_2h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107311A_SLAM_2h.sortdedup.bam
+ 107313A_SLAM_4h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107313A_SLAM_4h.sortdedup.bam
+ 107315A_SLAM_8h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107315A_SLAM_8h.sortdedup.bam
+ 107337B_SLAM_0h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107337B_SLAM_0h.sortdedup.bam
+ 107339B_SLAM_1h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107339B_SLAM_1h.sortdedup.bam
+ 107341B_SLAM_2h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107341B_SLAM_2h.sortdedup.bam
+ 107343B_SLAM_4h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107343B_SLAM_4h.sortdedup.bam
+ 107345B_SLAM_8h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107345B_SLAM_8h.sortdedup.bam
+
+# output directory
+mapping: /ComparisonOfMetabolicLabeling/pulseRTc/workflow/mapping/slam
+# output mismatch information
+mismatch: /ComparisonOfMetabolicLabeling/pulseRTc/workflow/mismatches/slam
+
+# SNPs file - ideally this file contains SNPs found on the set of all samples listed above
+# we currently use the snpdata from GRAND-SLAM (default format - Location\tCoverage\tMismatches\tP value)
+# comment out to run the pipeline without removing SNPs
+snpdata: /ComparisonOfMetabolicLabeling/grand-slam/slam/all/all.snpdata

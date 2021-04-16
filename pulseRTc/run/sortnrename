@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Usage: 
+# 	sortnrename SAMPLELIST
+
+DIRLOC=/prj/MCF7_RNA_turnover_Naarmann/CD30/workflow/mapping
+OUTPUT=/prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping
+SCRATCH=/scratch/eboileau
+files=($DIRLOC/*)
+
+while IFS=" " read -r sample name
+ do
+   FILEN=$(printf '%s\n' "${files[@]}" | grep $sample | grep -v mate)
+   NAME="${OUTPUT}/${sample}${name}.sorted.bam"
+   echo "Processing ${FILEN}/Aligned.noS.bam..."
+   samtools sort "${FILEN}/Aligned.noS.bam" -@12 -o ${NAME} -T "${SCRATCH}/${name}"
+   echo "Written sorted file to ${NAME}..."
+   echo "Indexing..."
+   samtools index ${NAME}
+   echo "Done!"
+ done < "$1"

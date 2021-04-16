@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Usage: 
+#       sortnrename SAMPLELIST
+
+DIRLOC=/prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping
+OUTPUT=/ComparisonOfMetabolicLabeling/grand-slam/slam
+PATTERN=*SLAM*
+#OUTPUT=/ComparisonOfMetabolicLabeling/grand-slam/tls
+#PATTERN=*TLS*
+#OUTPUT=/ComparisonOfMetabolicLabeling/grand-slam/tuc
+#PATTERN=*TUC*
+FILES=($DIRLOC/*)
+
+while IFS=" " read -r sample name
+ do
+  if [[ $name = $PATTERN ]]; then
+   FILEN=$(printf '%s\n' "${FILES[@]}" | grep $sample | grep "sortdedup.bam$")
+   NAME="${OUTPUT}/${sample}${name}.bam"
+   if [[ $name = *0h* ]]; then
+     NAME="${OUTPUT}/${sample}${name}_no4sU.bam"
+   fi
+   ln -s $FILEN $NAME
+   FILEN=$(printf '%s\n' "${FILES[@]}" | grep $sample | grep "sortdedup.bam.bai$")
+   NAME="${OUTPUT}/${sample}${name}.bam.bai"
+   if [[ $name = *0h* ]]; then
+     NAME="${OUTPUT}/${sample}${name}_no4sU.bam.bai"
+   fi
+   ln -s $FILEN $NAME
+  fi
+ done < "$1"

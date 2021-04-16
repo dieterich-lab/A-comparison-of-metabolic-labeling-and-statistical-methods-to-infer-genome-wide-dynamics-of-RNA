@@ -1,0 +1,24 @@
+# configuration file for TLS data
+
+# BAM files
+samples:
+ 107317A_TLS_0h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107317A_TLS_0h.sortdedup.bam
+ 107319A_TLS_1h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107319A_TLS_1h.sortdedup.bam
+ 107321A_TLS_2h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107321A_TLS_2h.sortdedup.bam
+ 107323A_TLS_4h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107323A_TLS_4h.sortdedup.bam
+ 107325A_TLS_8h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107325A_TLS_8h.sortdedup.bam
+ 107347B_TLS_0h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107347B_TLS_0h.sortdedup.bam
+ 107349B_TLS_1h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107349B_TLS_1h.sortdedup.bam
+ 107351B_TLS_2h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107351B_TLS_2h.sortdedup.bam
+ 107353B_TLS_4h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107353B_TLS_4h.sortdedup.bam
+ 107355B_TLS_8h: /prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping/107355B_TLS_8h.sortdedup.bam
+
+# output directory
+mapping: /ComparisonOfMetabolicLabeling/pulseRTc/workflow/mapping/tls
+# output mismatch information
+mismatch: /ComparisonOfMetabolicLabeling/pulseRTc/workflow/mismatches/tls
+
+# SNPs file - ideally this file contains SNPs found on the set of all samples listed above
+# we currently use the snpdata from GRAND-SLAM (default format - Location\tCoverage\tMismatches\tP value)
+# comment out to run the pipeline without removing SNPs
+snpdata: /ComparisonOfMetabolicLabeling/grand-slam/tls/all/all.snpdata

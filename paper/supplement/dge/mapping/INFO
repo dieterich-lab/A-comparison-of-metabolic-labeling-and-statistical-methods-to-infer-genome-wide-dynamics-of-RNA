@@ -1,0 +1,28 @@
+Symlinks to "un-split" alignment files.
+
+./slam:
+107307A_SLAM_0h.sortdedup.bam      107313A_SLAM_4h.sortdedup.bam.bai  107341B_SLAM_2h.sortdedup.bam
+107307A_SLAM_0h.sortdedup.bam.bai  107315A_SLAM_8h.sortdedup.bam      107341B_SLAM_2h.sortdedup.bam.bai
+107309A_SLAM_1h.sortdedup.bam      107315A_SLAM_8h.sortdedup.bam.bai  107343B_SLAM_4h.sortdedup.bam
+107309A_SLAM_1h.sortdedup.bam.bai  107337B_SLAM_0h.sortdedup.bam      107343B_SLAM_4h.sortdedup.bam.bai
+107311A_SLAM_2h.sortdedup.bam      107337B_SLAM_0h.sortdedup.bam.bai  107345B_SLAM_8h.sortdedup.bam
+107311A_SLAM_2h.sortdedup.bam.bai  107339B_SLAM_1h.sortdedup.bam      107345B_SLAM_8h.sortdedup.bam.bai
+107313A_SLAM_4h.sortdedup.bam      107339B_SLAM_1h.sortdedup.bam.bai
+
+./tls:
+107317A_TLS_0h.sortdedup.bam      107323A_TLS_4h.sortdedup.bam.bai  107351B_TLS_2h.sortdedup.bam
+107317A_TLS_0h.sortdedup.bam.bai  107325A_TLS_8h.sortdedup.bam      107351B_TLS_2h.sortdedup.bam.bai
+107319A_TLS_1h.sortdedup.bam      107325A_TLS_8h.sortdedup.bam.bai  107353B_TLS_4h.sortdedup.bam
+107319A_TLS_1h.sortdedup.bam.bai  107347B_TLS_0h.sortdedup.bam      107353B_TLS_4h.sortdedup.bam.bai
+107321A_TLS_2h.sortdedup.bam      107347B_TLS_0h.sortdedup.bam.bai  107355B_TLS_8h.sortdedup.bam
+107321A_TLS_2h.sortdedup.bam.bai  107349B_TLS_1h.sortdedup.bam      107355B_TLS_8h.sortdedup.bam.bai
+107323A_TLS_4h.sortdedup.bam      107349B_TLS_1h.sortdedup.bam.bai
+
+./tuc:
+107327A_TUC_0h.sortdedup.bam      107333A_TUC_4h.sortdedup.bam.bai  107361B_TUC_2h.sortdedup.bam
+107327A_TUC_0h.sortdedup.bam.bai  107335A_TUC_8h.sortdedup.bam      107361B_TUC_2h.sortdedup.bam.bai
+107329A_TUC_1h.sortdedup.bam      107335A_TUC_8h.sortdedup.bam.bai  107363B_TUC_4h.sortdedup.bam
+107329A_TUC_1h.sortdedup.bam.bai  107357B_TUC_0h.sortdedup.bam      107363B_TUC_4h.sortdedup.bam.bai
+107331A_TUC_2h.sortdedup.bam      107357B_TUC_0h.sortdedup.bam.bai  107365B_TUC_8h.sortdedup.bam
+107331A_TUC_2h.sortdedup.bam.bai  107359B_TUC_1h.sortdedup.bam      107365B_TUC_8h.sortdedup.bam.bai
+107333A_TUC_4h.sortdedup.bam      107359B_TUC_1h.sortdedup.bam.bai

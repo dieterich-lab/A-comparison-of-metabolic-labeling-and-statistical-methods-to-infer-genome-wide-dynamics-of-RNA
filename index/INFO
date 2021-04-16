@@ -1,0 +1,10 @@
+Here the reference annotation.
+
+genome-build GRCh38.p7
+genome-version GRCh38
+genome-date 2013-12
+genome-build-accession NCBI:GCA_000001405.22
+genebuild-last-updated 2016-06
+
+Concatenate with the ERCC gtf file.
+
