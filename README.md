@@ -17,4 +17,5 @@ Gene annotation
 
 ## paper
 
-Analysis scripts, additional results, supplementary files, tables, and figures.
+Analysis and plotting scripts, additional results used in the manuscript. 
+In particular, the **Supplementary Files** and **Other analyses** referenced in the manuscript are under [paper/supplement/](paper/supplement/).
