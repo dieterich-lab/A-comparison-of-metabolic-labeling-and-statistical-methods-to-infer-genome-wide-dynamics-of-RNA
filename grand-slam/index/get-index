@@ -6,13 +6,14 @@
 #SBATCH -c 1
 #SBATCH --mem=40G
 
-# modules loaded in ~/.bashrc
+# module load java/1.8.0_181
 
 NOW=$(date --utc +%y%m%d.%H%M%SZ)
 
 # index saved under ~/.gedi/genomic/${name}.oml
 GEDI=/home/eboileau/install/GRAND-SLAM_2.0.5f/gedi
 
+# fasta and gtf must be symlinked here - see ../../index directory
 ${GEDI} -e IndexGenome -s GRCh38_85_plus_Spikes_Isabel_fmtd.fa -a GRCh38_85_plus_Spikes_Isabel.gtf -n GRCh38_85_wspikes -nokallisto -nobowtie -nostar -D
 
 

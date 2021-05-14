@@ -6,7 +6,8 @@
 #SBATCH -c 1
 #SBATCH --mem=20G
 
-# modules loaded in ~/.bashrc
+# module load java/1.8.0_181
+# NOTE: Adjust DIRLOC to include full path
 
 NOW=$(date --utc +%y%m%d.%H%M%SZ)
 

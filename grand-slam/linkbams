@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Usage: 
-#       sortnrename SAMPLELIST
+#       linkbams SAMPLELIST
 
 DIRLOC=/prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/mapping
-OUTPUT=ComparisonOfMetabolicLabeling/grand-slam/slam
+OUTPUT=/prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/ComparisonOfMetabolicLabeling/grand-slam/slam
 PATTERN=*SLAM*
-#OUTPUT=ComparisonOfMetabolicLabeling/grand-slam/tls
+#OUTPUT=/prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/ComparisonOfMetabolicLabeling/grand-slam/tls
 #PATTERN=*TLS*
-#OUTPUT=ComparisonOfMetabolicLabeling/grand-slam/tuc
+#OUTPUT=/prj/MCF7_RNA_turnover_Naarmann/CD30-analysis/ComparisonOfMetabolicLabeling/grand-slam/tuc
 #PATTERN=*TUC*
 FILES=($DIRLOC/*)
 
