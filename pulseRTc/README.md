@@ -3,7 +3,8 @@ Split BAM files (RT or nucleotide conversion, *e.g.* SLAM-, TimeLapse-, TUC-seq 
 
 ### Prerequisites
 
-Pinned version of selected dependencies are listed in the `requirements.txt` file for reproducible installation.
+Pinned version of selected dependencies are listed in the `requirements.txt` file for reproducible installation. The workflow has been tested with Python 3.6.
+Read counting has been done with featureCounts v1.5.1. The pulseR code and analysis scripts are in R (see below for further information).
 
 ### Installation
 
@@ -26,8 +27,17 @@ source /path/to/virtual/environment/bin/activate
 # If necessary, upgrade pip and wheel or additional packages (such as setuptools if installing in editable mode).
 pip install --upgrade pip setuptools wheel
 
-# Clone the git repository
-git clone https://github.com/dieterich-lab/CompareRNALabeling/tree/main/pulseRTc
+# Clone the git repository...
+git clone https://github.com/dieterich-lab/ComparisonOfMetabolicLabeling.git
+cd ComparisonOfMetabolicLabeling/pulseRTc
+
+# ... or do a sparse checkout e.g.
+mkdir MetabolicLabelingWorkflow && cd MetabolicLabelingWorkflow
+git init
+git remote add -f origin https://github.com/dieterich-lab/ComparisonOfMetabolicLabeling
+git config core.sparseCheckout true
+echo 'pulseRTc' >> .git/info/sparse-checkout
+git pull origin master
 cd pulseRTc
 
 # The period is required, it is the local project path
@@ -39,7 +49,7 @@ pip --verbose install -r requirements.txt . 2>&1 | tee install.log
 
 To run the workflow, call the main wrapper `run` with a configuration file. See *makefile* for examples.
 
-Scripts and configuration files are under *run*. Intermediate results are under *workflow*.
+Scripts and example configuration files are under *run*. Intermediate results are under *workflow*.
 The pulseR scripts are under *pulser*, and the final results under *results*.
 
 The pulseR code and analysis scripts are in R. Minimal requirements are

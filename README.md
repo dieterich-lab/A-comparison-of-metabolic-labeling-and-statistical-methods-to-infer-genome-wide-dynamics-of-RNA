@@ -1,6 +1,8 @@
 ## Supplementary resources 
 
-> A comparison of metabolic labeling and statistical methods to study time-resolved, genome-wide dynamics of RNA turnover
+> A comparison of metabolic labeling and statistical methods to infer genome-wide dynamics of RNA turnover. 
+> Briefings in Bioinformatics.
+
 > Etienne Boileau, Janine Altm&uuml;ller, Isabel S. Naarmann-de Vries, and Christoph Dieterich
 
 ## pulseRTc

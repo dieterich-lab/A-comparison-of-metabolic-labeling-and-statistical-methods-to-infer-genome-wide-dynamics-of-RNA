@@ -20,7 +20,7 @@ GSOPTS="-D -strandness Antisense -overlap Unique -trim5p 5 -trim3p 5 -full"
 TIMEPTS=all
 
 # SLAM
-DIRLOC=/ComparisonOfMetabolicLabeling/grand-slam/slam
+DIRLOC=slam
 cd $DIRLOC
 PREFIX="${DIRLOC}/${TIMEPTS}/${TIMEPTS}"
 READS="${DIRLOC}/${TIMEPTS}.bamlist"
@@ -42,7 +42,7 @@ EOF
 sbatch ${JOBNAME}
 
 # TUC
-DIRLOC=/ComparisonOfMetabolicLabeling/grand-slam/tuc
+DIRLOC=tuc
 cd $DIRLOC
 PREFIX="${DIRLOC}/${TIMEPTS}/${TIMEPTS}"
 READS="${DIRLOC}/${TIMEPTS}.bamlist"
@@ -64,7 +64,7 @@ EOF
 sbatch ${JOBNAME}
 
 # TLS
-DIRLOC=/ComparisonOfMetabolicLabeling/grand-slam/tls
+DIRLOC=tls
 cd $DIRLOC
 PREFIX="${DIRLOC}/${TIMEPTS}/${TIMEPTS}"
 READS="${DIRLOC}/${TIMEPTS}.bamlist"

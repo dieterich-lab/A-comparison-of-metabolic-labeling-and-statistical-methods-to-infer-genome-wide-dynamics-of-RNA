@@ -1,3 +1,5 @@
 include README.md
 recursive-include pulser *
 recursive-include run *
+recursive-include results *
+recursive-include workflow *
