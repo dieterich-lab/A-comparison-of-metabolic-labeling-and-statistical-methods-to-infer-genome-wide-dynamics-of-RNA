@@ -3,7 +3,7 @@ Split BAM files (RT or nucleotide conversion, *e.g.* SLAM-, TimeLapse-, TUC-seq 
 
 ### Prerequisites
 
-Pinned version of selected dependencies are listed in the `requirements.txt` file for reproducible installation. The workflow has been tested with Python 3.6.
+Pinned version of selected dependencies are listed in the `requirements.txt` file for reproducible installation. The workflow has been tested with Python 3.6. The current version of `pysam` wraps `htslib-1.7`, `samtools-1.7`, and `bcftools-1.6`. A working installation of `samtools` is required to run the workflow. 
 Read counting has been done with featureCounts v1.5.1. The pulseR code and analysis scripts are in R (see below for further information).
 
 ### Installation

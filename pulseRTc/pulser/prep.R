@@ -1,4 +1,4 @@
-#!/biosw/R/3.5.1/bin/Rscript
+#! /usr/bin/env Rscript
 
 library(purrr)
 library(tibble)
@@ -10,7 +10,7 @@ library(dplyr)
 ##' No filtering based on expression, etc.
 getData <- function(data, dataDir, dataFile, outDir){
     cts <- read.table(file.path(dataDir, dataFile, fsep=.Platform$file.sep), row.names=1, sep = "\t", header=TRUE, check.names=FALSE)
-    cts <- cts %>% dplyr::select(starts_with("/prj"))
+    cts <- cts %>% dplyr::select(starts_with("workflow"))
     depth <- length(strsplit(colnames(cts)[1], "/", fixed=T)[[1]])
     conditions <- data.frame(vapply(strsplit(colnames(cts), "/", fixed=T), "[", "", depth), stringsAsFactors=FALSE)
     colnames(conditions) <- "sample"

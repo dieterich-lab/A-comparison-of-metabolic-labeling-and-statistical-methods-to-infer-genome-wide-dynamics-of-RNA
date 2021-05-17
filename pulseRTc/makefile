@@ -42,6 +42,9 @@ PSRC=pulser
 PLOG=pulser/logs
 # prepare count tables and metadata for processing with pulseR
 # *** for ERCC, user must symlink std files  
+# *** some hard coded features in prep.R, e.g. path to files starting with "workflow" (see above), etc.
+# *** scripts use package here
+
 prep:
 	${SLURM} $(PSRC)/prep.R	> $(PLOG)/$@.$(NOW).log 2>&1 &
 	

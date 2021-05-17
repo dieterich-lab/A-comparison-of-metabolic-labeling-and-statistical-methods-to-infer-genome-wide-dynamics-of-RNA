@@ -1,4 +1,4 @@
-#!/biosw/R/3.5.1/bin/Rscript
+#! /usr/bin/env Rscript
 
 # Usage: ./fit_rtc.R [slam/tuc/tls] <0/1>
 # <0/1>: 0 = all time points (default), 1 = subset of time points

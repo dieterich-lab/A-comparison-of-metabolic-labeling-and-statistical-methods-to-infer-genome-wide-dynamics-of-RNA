@@ -1,4 +1,4 @@
-#!/biosw/R/3.6.2/bin/Rscript
+#! /usr/bin/env Rscript
 
 ## Usage: ./run-deseq-all.R
 

@@ -1,4 +1,4 @@
-#!/biosw/R/3.5.1/bin/Rscript
+#! /usr/bin/env Rscript
 
 # Usage: ./plot.R
 

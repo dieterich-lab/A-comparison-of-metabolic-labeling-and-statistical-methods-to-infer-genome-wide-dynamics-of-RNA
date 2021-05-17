@@ -1,4 +1,4 @@
-#!/biosw/R/3.5.1/bin/Rscript
+#! /usr/bin/env Rscript
 
 # Usage: ./fit_std.R <0/1> <0/1>
 # <0/1>: 0 = fit (default), 1 = use ERCC spike-ins

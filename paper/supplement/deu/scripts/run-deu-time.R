@@ -1,4 +1,4 @@
-#!/biosw/R/3.6.2/bin/Rscript
+#! /usr/bin/env Rscript
 
 ## Usage: ./run-deu.R [time]
 ## time: 1, 2, 4, or 8
