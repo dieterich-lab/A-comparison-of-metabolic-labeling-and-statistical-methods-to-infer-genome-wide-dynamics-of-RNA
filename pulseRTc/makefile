@@ -50,17 +50,17 @@ prep:
 	
 # all time points, standard using ERCC
 pulse-ercc:
-	${SLURM24} $(PSRC)/fit_std.R 1 0 > $(PLOG)/$@.$(NOW).out 2>&1 &
+	$(SLURM24) $(PSRC)/fit_std.R 1 0 > $(PLOG)/$@.$(NOW).out 2>&1 &
 # subset of time points, standard using ERCC
 pulse-ercc-sets:
-	${SLURM24} $(PSRC)/fit_std.R 1 1 > $(PLOG)/$@.$(NOW).out 2>&1 &
+	$(SLURM24) $(PSRC)/fit_std.R 1 1 > $(PLOG)/$@.$(NOW).out 2>&1 &
 
 # all time points, standard fitting normFactors
 pulse-std:
-	${SLURM24} $(PSRC)/fit_std.R > $(PLOG)/$@.$(NOW).out 2>&1 &	
+	$(SLURM24) $(PSRC)/fit_std.R > $(PLOG)/$@.$(NOW).out 2>&1 &	
 # subset of time points, standard fitting normFactors	
 pulse-std-sets:
-	${SLURM24} $(PSRC)/fit_std.R 0 1 > $(PLOG)/$@.$(NOW).out 2>&1 &
+	$(SLURM24) $(PSRC)/fit_std.R 0 1 > $(PLOG)/$@.$(NOW).out 2>&1 &
 	
 # all time points, SLAM/TLS/TUC
 pulse-rtc:
